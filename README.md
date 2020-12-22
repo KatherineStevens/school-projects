@@ -10,4 +10,4 @@ Note: This code was written intentionally without using statistics functions
 
 3. Calculator Project (Team Project)
 
-This project uses various packages and user defined functions to perform calculations (written or from file) and graph functions.
+This project is a menu based Python code. It uses various packages and user defined functions to perform calculations (written or from file) and graph functions. 
