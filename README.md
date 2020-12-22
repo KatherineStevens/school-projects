@@ -7,3 +7,7 @@ This project uses Python code to read Lidar data and extract Right of Way (ROW) 
 
 This project uses Python code to read weather data from January 2015 - December 2017. It finds the average precipitation and minimum/maximum temperature of the whole data set. It then takes as input a month name and year and outputs for that month the average low temperature, percentage of days with average humidity below 75%, the mean daily precipitation, and the standard deviation of daily precipitation.
 Note: This code was written intentionally without using statistics functions 
+
+3. Calculator Project (Team Project)
+
+This project uses various packages and user defined functions to perform calculations (written or from file) and graph functions.
