@@ -62,7 +62,7 @@ year = input("Enter a year: \n")
 print("For ", month," ", year, ":", sep="")
 dict = {'January': '1', 'February': '2', 'March': '3', 'April': '4', 'May': '5', 'June': '6', 'July': '7', 'August': '8', 'September': '9', 'October': '10', 'November': '11', 'December': '12'}
 if month in dict:
-    num_month = dict[month]
+    month_number = dict[month]
     
 # for that month
 #       a. calc avg of low temps  (1 dec)
@@ -71,40 +71,40 @@ low = 0
 for i in range(1, len(list2)):
     date = list2[i][0].split("/")
     #print(date)
-    if date[2] == year and date[0] == num_month:
+    if date[2] == year and date[0] == month_number:
         low += list2[i][3]
         total += 1
 avg_low = low / total
 print("Average low temperature: %.1f" %avg_low, "F")
 
 #       b. calc % of days when avg humidity below 75% (1 dec)
-num_hum = 0
-tot_hum = 0
+humidity_number = 0
+total_humidity = 0
 for i in range(1, len(list2)):
     date = list2[i][0].split("/")
-    if date[2] == year and date[0] == num_month:
-        tot_hum += 1
+    if date[2] == year and date[0] == month_number:
+        total_humidity += 1
         if list2[i][8] < 75:
-            num_hum += 1
-per_hum = (num_hum / tot_hum) * 100
+            humidity_number += 1
+humidity_percent = (humidity_number / total_humidity) * 100
 
-per_string = "%.1f" %per_hum + "%"
+per_string = "%.1f" % humidity_percent + "%"
 print("Percentage of days with average humidity below 75%:", per_string) 
 
-prec_add = 0
+precipitation_count = 0
 num_days = 0
 var = 0
 #       c. calc mean and standard dev of daily precipitation levels (4 dec)
 for i in range(1, len(list2)):
     date = list2[i][0].split("/")
-    if date[2] == year and date[0] == num_month:
-        prec_add += list2[i][13]
+    if date[2] == year and date[0] == month_number:
+        precipitation_count += list2[i][13]
         num_days += 1
-mean = prec_add / num_days
+mean = precipitation_count / num_days
 
 for i in range(1, len(list2)):
     date = list2[i][0].split("/")
-    if date[2] == year and date[0] == num_month:
+    if date[2] == year and date[0] == month_number:
         var += ((list2[i][13] - mean) ** 2)
         
 stan_dev = sqrt(var / (num_days))
